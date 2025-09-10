@@ -1,6 +1,6 @@
 import { Lock, Shield, Settings, Vote } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const Header = () => {
@@ -24,8 +24,8 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <a 
-            href="/" 
+          <Link 
+            to="/" 
             className={`transition-colors ${
               location.pathname === "/" 
                 ? "text-foreground font-medium" 
@@ -34,9 +34,9 @@ const Header = () => {
           >
             <Vote className="h-4 w-4 inline mr-1" />
             Vote Sessions
-          </a>
-          <a 
-            href="/create" 
+          </Link>
+          <Link 
+            to="/create" 
             className={`transition-colors ${
               location.pathname === "/create" 
                 ? "text-foreground font-medium" 
@@ -44,9 +44,9 @@ const Header = () => {
             }`}
           >
             Create Session
-          </a>
-          <a 
-            href="/results" 
+          </Link>
+          <Link 
+            to="/results" 
             className={`transition-colors ${
               location.pathname === "/results" 
                 ? "text-foreground font-medium" 
@@ -54,7 +54,7 @@ const Header = () => {
             }`}
           >
             Results
-          </a>
+          </Link>
         </nav>
 
         {/* Right side */}
